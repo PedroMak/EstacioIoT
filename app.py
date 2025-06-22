@@ -3,7 +3,7 @@ import serial
 import time
 
 # Carrega a primeira imagem e extrai a codificação da face
-image1 = face_recognition.load_image_file("foto1.bmp")
+image1 = face_recognition.load_image_file("caminho/foto1")
 encodings1 = face_recognition.face_encodings(image1)
 
 if len(encodings1) > 0:
@@ -13,7 +13,7 @@ else:
     exit()
 
 # Carrega a segunda imagem e extrai a codificação da face
-image2 = face_recognition.load_image_file("foto2.jpg")
+image2 = face_recognition.load_image_file("caminho/foto2")
 encodings2 = face_recognition.face_encodings(image2)
 
 if len(encodings2) > 0:
