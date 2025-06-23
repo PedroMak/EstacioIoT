@@ -3,8 +3,6 @@
 #include <util/twi.h>
 #include <util/delay.h>
 #include <avr/pgmspace.h>
-#include <Servo.h>
-Servo porta;
 #define F_CPU 16000000UL
 #define vga   0
 #define qvga  1
@@ -549,11 +547,8 @@ void setup(){
   camInit();
   setResolution();
   setColor();
-  writeReg(0x11, 10); //Earlier it had the value:writeReg(0x11, 12); New version works better for me :) !!!!
-  pinMode(13, OUTPUT);
-  Serial.begin(9600);
-  Serial.println("Arduino pronto.");
-    
+ writeReg(0x11, 10);
+ pinMode(13, OUTPUT); //Earlier it had the value:writeReg(0x11, 12); New version works better for me :) !!!!
 }
 void loop(){
   captureImg(320, 240);
